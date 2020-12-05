@@ -10,11 +10,11 @@ import {
 import Users from './User/pages/Users';
 import NewPlace from './Places/Pages/NewPlaces';
 import MainNavigation from './Shared/Components/Navigation/MainNavigation'; 
-import MainSlide from './Shared/Components/SlideShow/MainSlide';
+// import MainSlide from './Shared/Components/SlideShow/MainSlide';
 function App() {
   return (
     <Router>
-      <MainSlide/>
+
       <MainNavigation />
       <main> 
       <Router>
