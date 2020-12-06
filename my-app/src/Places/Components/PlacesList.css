@@ -1,0 +1,6 @@
+.place-list{
+    list-style: none;
+    margin: auto;
+    width: 90%;
+    max-width: 40rem;
+}
