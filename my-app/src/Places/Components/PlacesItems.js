@@ -3,13 +3,28 @@ import React,{useState} from 'react' ;
 import './PlacesItems.css';
 import Card from './../../Shared/Components/UIElements/Card';
 import ButtonItems from '../../Shared/Components/FormElements/ButtonItems'
-
-// const [showMap, setShowMap] = useState(false);
-// const openMapHandler = () => setShowMap(true);
-// const closeMapHandler = () => setShowMap(false);
-
+import Modal from '../../Shared/Components/UIElements/modal';
+import Map from '../../Shared/Components/UIElements/Map';
 const PlacesItem = props => {
-    return (
+    const [showMap, setShowMap] = useState(false);
+    const openMapHandler = () => setShowMap(true);
+    const closeMapHandler = () => setShowMap(false);
+        return (
+            <React.Fragment>
+            <Modal
+              show={showMap}
+              onCancel={closeMapHandler}
+              header={props.address}
+              contentClass="place-item__modal-content"
+              footerClass="place-item__modal-actions"
+              footer={<ButtonItems onClick={closeMapHandler}>CLOSE</ButtonItems>}
+            >
+              <div className="map-container">
+               <Map center={props.coordinates}  zoom={16}>
+
+               </Map>
+              </div>
+            </Modal>
         <div class="card">
         <img src={props.image} alt={props.title} />
               <div class="container">
@@ -18,12 +33,13 @@ const PlacesItem = props => {
                      <p>{props.desc}</p> 
                </div>
                <div className="place-buttons">
-                    <ButtonItems inverse >View On Map</ButtonItems>
+                    <ButtonItems inverse onClick={openMapHandler} >View On Map</ButtonItems>
                     <ButtonItems to={`/place/${props.id}`}>Edit</ButtonItems>
                     <ButtonItems danger>Delete</ButtonItems>
                 </div>
         </div>
-    )
+        </React.Fragment>
+    );
 
-}
+};
 export default PlacesItem ;
