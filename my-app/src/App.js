@@ -18,7 +18,6 @@ function App() {
 
       <MainNavigation />
       <main> 
-      <Router>
         <Switch>
             <Route path="/" exact>
               <Users />
@@ -26,16 +25,17 @@ function App() {
             <Route path="/allUser" exact>
               <Users />
             </Route>
-            <Route path="/:userId/places">
-              <UserPlaces></UserPlaces>
+            <Route path="/:userId/places"exact>
+              <UserPlaces/>
             </Route>
             <Route path="/places/new" exact>
               <NewPlace />
             </Route>
-          
+            <Route path="/auth" exact>
+              <NewPlace />
+            </Route>
             <Redirect to="/" />
           </Switch>
-        </Router>
       </main>
     </Router>
   );
