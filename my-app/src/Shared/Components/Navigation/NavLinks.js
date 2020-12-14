@@ -17,6 +17,9 @@ const NavLinks = props =>{
             <NavLink class="nav-link" to='/places/new'>
                 NewPlace
             </NavLink>
+            <NavLink class="nav-link" to='/places/:placeId'>
+                Update Place
+            </NavLink>
     
     </div>
     );

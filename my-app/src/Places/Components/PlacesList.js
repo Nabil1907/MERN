@@ -3,6 +3,7 @@ import React from 'react';
 import './PlacesList.css';
 import PlacesItem from './PlacesItems';
 import Card from '../../Shared/Components/UIElements/Card';
+import Button from '../../Shared/Components/FormElements/ButtonItems';
 const PlacesList = props =>{
     if (props.items.length === 0) {
         return (
@@ -11,9 +12,9 @@ const PlacesList = props =>{
                     <h2>
                         No Place Found. May be Create One? 
                     </h2>
-                    <buton>
+                    <Button to='/places/new' className="center">
                         Share Your Place ! 
-                    </buton>
+                    </Button>
                 </Card>
             </div>
 
